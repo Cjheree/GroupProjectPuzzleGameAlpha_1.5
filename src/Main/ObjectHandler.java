@@ -15,8 +15,8 @@ public class ObjectHandler {
     public void setObject() { // Sets objects and their parameters to indexes in the obj array for recall
 
         gp.obj[0] = new object_Door_Closed_In();
-        gp.obj[0].worldX = 11 * gp.tileSize;
-        gp.obj[0].worldY = 19 * gp.tileSize;
+        gp.obj[0].worldX = 9 * gp.tileSize;
+        gp.obj[0].worldY = 8 * gp.tileSize;
 
         gp.obj[1] = new object_Chest_Closed();
         gp.obj[1].worldX = 2 * gp.tileSize;
@@ -27,8 +27,8 @@ public class ObjectHandler {
         gp.obj[2].worldY = 2 * gp.tileSize;
 
         gp.obj[3] = new object_Key_1();
-        gp.obj[3].worldX = 4 * gp.tileSize;
-        gp.obj[3].worldY = 2 * gp.tileSize;
+        gp.obj[3].worldX = 1 * gp.tileSize;
+        gp.obj[3].worldY = 18 * gp.tileSize;
 
         gp.obj[4] = new object_Ladder_Up();
         gp.obj[4].worldX = 5 * gp.tileSize;

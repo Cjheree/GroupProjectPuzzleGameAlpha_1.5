@@ -40,9 +40,9 @@ public class Player extends Entity {
 
     public void setDefaultValues() { // Sets default values of entity
 
-        worldX = gp.tileSize * 11 ; // X coordinate on world map
-        worldY = gp.tileSize * 11; // Y coordinate on world map
-        speed = 8; // Pixels traversed per iteration of FPS (1/FPS seconds)
+        worldX = gp.tileSize * 10 ; // X coordinate on world map
+        worldY = gp.tileSize * 22; // Y coordinate on world map
+        speed = 12; // Pixels traversed per iteration of FPS (1/FPS seconds)
         direction = "down"; // Player starts facing down
     }
 

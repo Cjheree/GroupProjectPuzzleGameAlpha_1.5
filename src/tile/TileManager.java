@@ -26,7 +26,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage(); // Sets tile images according to specific data structure and tile type
-        loadMap("maps/World_Map_1.txt"); // Loads map from specified txt file
+        loadMap("maps/MapV2.txt"); // Loads map from specified txt file
 
     }
 
@@ -37,10 +37,10 @@ public class TileManager {
             // Map Tile Assignments
             mapTile[0] = new Tile();
             mapTile[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Stone_1.png"));
-
+            mapTile[0].collision = true;
             mapTile[1] = new Tile();
             mapTile[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Dirt_1.png"));
-            mapTile[1].collision = true;
+
 
             mapTile[2] = new Tile();
             mapTile[2].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Dirt_2.png"));
