@@ -27,7 +27,7 @@ public class Player extends Entity {
         screenX = (gp.screenWidth/2) - (gp.tileSize/2); // Returns halfway point of screen in terms of width
         screenY = (gp.screenHeight/2) - (gp.tileSize/2); // Returns halfway point of screen in terms of height
 
-        solidArea = new Rectangle(12, 20, 40, 40); // Creation of hit box
+        solidArea = new Rectangle(24, 40, 80, 80); // Creation of hit box
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
@@ -40,9 +40,9 @@ public class Player extends Entity {
 
     public void setDefaultValues() { // Sets default values of entity
 
-        worldX = gp.tileSize * 11 ; // X coordinate on world map
-        worldY = gp.tileSize * 11; // Y coordinate on world map
-        speed = 4; // Pixels traversed per iteration of FPS (1/FPS seconds)
+        worldX = gp.tileSize * 10 ; // X coordinate on world map
+        worldY = gp.tileSize * 22; // Y coordinate on world map
+        speed = 12; // Pixels traversed per iteration of FPS (1/FPS seconds)
         direction = "down"; // Player starts facing down
     }
 

@@ -11,7 +11,7 @@ public class SuperObject {
     public String name;
     public boolean collision = false;
     public int worldX, worldY;
-    public Rectangle solidArea = new Rectangle(0, 0, 40, 40);
+    public Rectangle solidArea = new Rectangle(0, 0, 80, 80);
     public int solidAreaDefaultX = 0;
     public int solidAreaDefaultY = 0;
 
