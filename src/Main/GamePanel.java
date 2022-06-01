@@ -14,11 +14,11 @@ public class GamePanel extends JPanel implements Runnable {
     // REORGANISE THIS SHIT ONCE FINAL ** Marked for Deletion **
 
     final int originalTileSize = 32; // Pixel dimensions of the sprites/graphics used
-    final int scale = 2; // Scale of image dilation/enlargement
+    final int scale = 4; // Scale of image dilation/enlargement
 
     public final int tileSize = originalTileSize * scale; // Makes the images larger so user can see them better
-    public final int maxScreenCol = 16; // 16 columns of tiles across
-    public final int maxScreenRow = 12; // 12 rows of tiles across. Keep a 4:3 aspect ratio
+    public final int maxScreenCol = 8; // 16 columns of tiles across
+    public final int maxScreenRow = 6; // 12 rows of tiles across. Keep a 4:3 aspect ratio
 
     public final int screenWidth = tileSize * maxScreenCol; // Width of window created
     public final int screenHeight = tileSize * maxScreenRow; // Height of window created
