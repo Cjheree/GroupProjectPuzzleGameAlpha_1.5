@@ -42,7 +42,7 @@ public class Player extends Entity {
     public void setDefaultValues() { // Sets default values of entity
 
         worldX = gp.tileSize * 9 ; // X coordinate on world map
-        worldY = gp.tileSize * 25; // Y coordinate on world map
+        worldY = gp.tileSize * 36; // Y coordinate on world map
         speed = 12; // Pixels traversed per iteration of FPS (1/FPS seconds)
         direction = "down"; // Player starts facing down
     }
