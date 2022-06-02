@@ -68,7 +68,7 @@ public class ObjectHandler {
         gp.obj[11].collision = true;
 
         gp.obj[12] = new object_Lever_Off_3();
-        gp.obj[12].worldX = 7 * gp.tileSize;
+        gp.obj[12].worldX = 11 * gp.tileSize;
         gp.obj[12].worldY = 17 * gp.tileSize;
         gp.obj[12].collision = true;
 
@@ -78,7 +78,7 @@ public class ObjectHandler {
         gp.obj[13].collision = true;
 
         gp.obj[14] = new object_Lever_Off_4();
-        gp.obj[14].worldX = 11 * gp.tileSize;
+        gp.obj[14].worldX = 7 * gp.tileSize;
         gp.obj[14].worldY = 17 * gp.tileSize;
         gp.obj[14].collision = true;
 
@@ -86,6 +86,47 @@ public class ObjectHandler {
         gp.obj[15].worldX = 1 * gp.tileSize;
         gp.obj[15].worldY = 17 * gp.tileSize;
         gp.obj[15].collision = true;
+
+        gp.obj[16] = new object_Red_Door_1();
+        gp.obj[16].worldX = 6 * gp.tileSize;
+        gp.obj[16].worldY = 8 * gp.tileSize;
+
+        gp.obj[17] = new object_Blue_Door_1();
+        gp.obj[17].worldX = 12 * gp.tileSize;
+        gp.obj[17].worldY = 5 * gp.tileSize;
+
+        gp.obj[18] = new object_Red_Door_2();
+        gp.obj[18].worldX = 7 * gp.tileSize;
+        gp.obj[18].worldY = 4 * gp.tileSize;
+
+        gp.obj[19] = new object_Blue_Door_2();
+        gp.obj[19].worldX = 9 * gp.tileSize;
+        gp.obj[19].worldY = 2 * gp.tileSize;
+
+        gp.obj[20] = new object_Red_Door_2();
+        gp.obj[20].worldX = 9 * gp.tileSize;
+        gp.obj[20].worldY = 0 * gp.tileSize;
+
+        gp.obj[21] = new object_Red_Button_1();
+        gp.obj[21].worldX = 8 * gp.tileSize;
+        gp.obj[21].worldY = 9 * gp.tileSize;
+
+        gp.obj[22] = new object_Red_Button_2();
+        gp.obj[22].worldX = 9 * gp.tileSize;
+        gp.obj[22].worldY = 6 * gp.tileSize;
+
+        gp.obj[23] = new object_Blue_Button_1();
+        gp.obj[23].worldX = 10 * gp.tileSize;
+        gp.obj[23].worldY = 9 * gp.tileSize;
+
+        gp.obj[24] = new object_Blue_Button_2();
+        gp.obj[24].worldX = 6 * gp.tileSize;
+        gp.obj[24].worldY = 3 * gp.tileSize;
+
+        gp.obj[25] = new object_Barrel();
+        gp.obj[25].worldX = 11 * gp.tileSize;
+        gp.obj[25].worldY = 33 * gp.tileSize;
+
 
 
 
