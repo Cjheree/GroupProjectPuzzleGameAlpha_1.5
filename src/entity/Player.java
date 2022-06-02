@@ -13,6 +13,7 @@ public class Player extends Entity {
     GamePanel gp;
     KeyHandler keyH;
     private boolean standing;
+    private int sleepCount = 0;
 
     public final int screenX; // X coordinate of the camera in relation to the player/world
     public final int screenY; // Y coordinate of the camera in relation to the player/world
@@ -40,8 +41,8 @@ public class Player extends Entity {
 
     public void setDefaultValues() { // Sets default values of entity
 
-        worldX = gp.tileSize * 10 ; // X coordinate on world map
-        worldY = gp.tileSize * 22; // Y coordinate on world map
+        worldX = gp.tileSize * 9 ; // X coordinate on world map
+        worldY = gp.tileSize * 25; // Y coordinate on world map
         speed = 12; // Pixels traversed per iteration of FPS (1/FPS seconds)
         direction = "down"; // Player starts facing down
     }
@@ -144,6 +145,10 @@ public class Player extends Entity {
 
     public void objectInteraction(int i) {
 
+        int tempX = 0;
+        int tempY = 0;
+
+
         if (i != 999) {
 
             // Possible Future Usage Code
@@ -152,6 +157,8 @@ public class Player extends Entity {
             String objName = gp.obj[i].name;
 
             switch (objName) {
+
+
                 case "Key_1":
                     keyCount++; // Adds keys to player's "inventory"
                     gp.obj[i] = null; // This just deletes the object!
@@ -162,6 +169,122 @@ public class Player extends Entity {
                         keyCount--; // Removes said key from player's "inventory"
                     }
                     System.out.println("keyCount: " + keyCount);
+                    break;
+                case "Chest_Closed":
+                    if(keyCount > 0){
+                        gp.obj[2].worldX = gp.obj[i].worldX;
+                        gp.obj[2].worldY = gp.obj[i].worldY;
+                        gp.obj[i] = null;
+                        keyCount--;
+                    }
+                    break;
+                case "Lever_Off_1":
+                    sleepCount++;
+                    if(sleepCount % 8 == 0) {
+                        tempX = gp.obj[9].worldX;
+                        tempY = gp.obj[9].worldY;
+                        gp.obj[9].worldX = gp.obj[i].worldX;
+                        gp.obj[9].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                    }
+                    break;
+                case "Lever_On_1":
+                    sleepCount++;
+                    if(sleepCount % 16 == 0) {
+                        tempX = gp.obj[8].worldX;
+                        tempY = gp.obj[8].worldY;
+                        gp.obj[8].worldX = gp.obj[i].worldX;
+                        gp.obj[8].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                        sleepCount++;
+                    }
+                    break;
+                case "Lever_Off_2":
+                    sleepCount++;
+                    if(sleepCount % 8 == 0) {
+                        tempX = gp.obj[11].worldX;
+                        tempY = gp.obj[11].worldY;
+                        gp.obj[11].worldX = gp.obj[i].worldX;
+                        gp.obj[11].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                    }
+                    break;
+                case "Lever_On_2":
+                    sleepCount++;
+                    if(sleepCount % 16 == 0) {
+                        tempX = gp.obj[10].worldX;
+                        tempY = gp.obj[10].worldY;
+                        gp.obj[10].worldX = gp.obj[i].worldX;
+                        gp.obj[10].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                        sleepCount++;
+                    }
+                    break;
+                case "Lever_Off_3":
+                    sleepCount++;
+                    if(sleepCount % 8 == 0) {
+                        tempX = gp.obj[13].worldX;
+                        tempY = gp.obj[13].worldY;
+                        gp.obj[13].worldX = gp.obj[i].worldX;
+                        gp.obj[13].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                    }
+                    break;
+                case "Lever_On_3":
+                    sleepCount++;
+                    if(sleepCount % 16 == 0) {
+                        tempX = gp.obj[12].worldX;
+                        tempY = gp.obj[12].worldY;
+                        gp.obj[12].worldX = gp.obj[i].worldX;
+                        gp.obj[12].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                        sleepCount++;
+                    }
+                    break;
+                case "Lever_Off_4":
+                    sleepCount++;
+                    if(sleepCount % 8 == 0) {
+                        tempX = gp.obj[15].worldX;
+                        tempY = gp.obj[15].worldY;
+                        gp.obj[15].worldX = gp.obj[i].worldX;
+                        gp.obj[15].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                    }
+                    break;
+                case "Lever_On_4":
+                    sleepCount++;
+                    if(sleepCount % 16 == 0) {
+                        tempX = gp.obj[14].worldX;
+                        tempY = gp.obj[14].worldY;
+                        gp.obj[14].worldX = gp.obj[i].worldX;
+                        gp.obj[14].worldY = gp.obj[i].worldY;
+                        gp.obj[i].worldX = tempX;
+                        gp.obj[i].worldY = tempY;
+                        tempX = 0;
+                        tempY = 0;
+                        sleepCount++;
+                    }
                     break;
 
             }

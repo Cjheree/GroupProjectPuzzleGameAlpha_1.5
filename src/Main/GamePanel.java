@@ -30,7 +30,7 @@ public class GamePanel extends JPanel implements Runnable {
     public int FPS = 60; // Frames per second (FPS)
     public CollisionHandler cChecker = new CollisionHandler(this); // Initialises CollisionHandler
     public ObjectHandler objectSetter = new ObjectHandler(this); // Initiates ObjectHandler
-    public SuperObject obj[] = new SuperObject[10]; // Creates array to store objects on screen
+    public SuperObject obj[] = new SuperObject[100]; // Creates array to store objects on screen
     TileManager tileM = new TileManager(this); // Initiates Tile Manager in this GamePanel
     KeyHandler keyH = new KeyHandler();
     Thread gameThread; // Opens thread
