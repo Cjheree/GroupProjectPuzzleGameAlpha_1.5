@@ -27,12 +27,12 @@ public class ObjectHandler {
         gp.obj[0].worldY = 19 * gp.tileSize;
 
         gp.obj[1] = new object_Chest_Closed();
-        gp.obj[1].worldX = 11 * gp.tileSize;
-        gp.obj[1].worldY = 32 * gp.tileSize;
+        gp.obj[1].worldX = 0 * gp.tileSize;
+        gp.obj[1].worldY = 0 * gp.tileSize;
 
         gp.obj[2] = new object_Chest_Open();
-        gp.obj[2].worldX = 1 * gp.tileSize;
-        gp.obj[2].worldY = 1 * gp.tileSize;
+        gp.obj[2].worldX = 0 * gp.tileSize;
+        gp.obj[2].worldY = 0 * gp.tileSize;
         gp.obj[2].collision = true;
 
         gp.obj[3] = new object_Key_1();
@@ -131,9 +131,25 @@ public class ObjectHandler {
         gp.obj[24].worldX = 6 * gp.tileSize;
         gp.obj[24].worldY = 3 * gp.tileSize;
 
-        gp.obj[25] = new object_Barrel();
-        gp.obj[25].worldX = 11 * gp.tileSize;
-        gp.obj[25].worldY = 33 * gp.tileSize;
+        gp.obj[25] = new object_Barrel_Closed_1();
+        gp.obj[25].worldX = 7 * gp.tileSize;
+        gp.obj[25].worldY = 32 * gp.tileSize;
+        gp.obj[25].collision = true;
+
+        gp.obj[26] = new object_Barrel_Closed_2();
+        gp.obj[26].worldX = 11 * gp.tileSize;
+        gp.obj[26].worldY = 32 * gp.tileSize;
+        gp.obj[26].collision = true;
+
+        gp.obj[27] = new object_Barrel_Closed_3();
+        gp.obj[27].worldX = 7 * gp.tileSize;
+        gp.obj[27].worldY = 36 * gp.tileSize;
+        gp.obj[27].collision = true;
+
+        gp.obj[28] = new object_Barrel_Closed_4();
+        gp.obj[28].worldX = 11 * gp.tileSize;
+        gp.obj[28].worldY = 36 * gp.tileSize;
+        gp.obj[28].collision = true;
 
 
 
