@@ -3,9 +3,9 @@ package objects;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class object_Barrel_Closed_1 extends SuperObject {
+public class object_Barrel_Closed extends SuperObject {
 
-    public object_Barrel_Closed_1() {
+    public object_Barrel_Closed() {
 
         name = "Barrel_Closed";
         try {

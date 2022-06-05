@@ -131,23 +131,23 @@ public class ObjectHandler {
         gp.obj[24].worldX = 6 * gp.tileSize;
         gp.obj[24].worldY = 3 * gp.tileSize;
 
-        gp.obj[25] = new object_Barrel_Closed_1();
+        gp.obj[25] = new object_Barrel_Closed();
         gp.obj[25].worldX = 7 * gp.tileSize;
         gp.obj[25].worldY = 32 * gp.tileSize;
         gp.obj[25].collision = true;
 
-        gp.obj[26] = new object_Barrel_Closed_2();
+        gp.obj[26] = new object_Barrel_Closed();
         gp.obj[26].worldX = 11 * gp.tileSize;
         gp.obj[26].worldY = 32 * gp.tileSize;
         gp.obj[26].collision = true;
 
-        gp.obj[27] = new object_Barrel_Closed_3();
-        gp.obj[27].worldX = 7 * gp.tileSize;
+        gp.obj[27] = new object_Barrel_Closed();
+        gp.obj[27].worldX = 11 * gp.tileSize;
         gp.obj[27].worldY = 36 * gp.tileSize;
         gp.obj[27].collision = true;
 
-        gp.obj[28] = new object_Barrel_Closed_4();
-        gp.obj[28].worldX = 11 * gp.tileSize;
+        gp.obj[28] = new object_Barrel_Closed();
+        gp.obj[28].worldX = 7 * gp.tileSize;
         gp.obj[28].worldY = 36 * gp.tileSize;
         gp.obj[28].collision = true;
 

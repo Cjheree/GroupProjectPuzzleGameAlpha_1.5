@@ -7,9 +7,9 @@ public class object_Door_Closed_Lever extends SuperObject {
 
     public object_Door_Closed_Lever() {
 
-        name = "Red_Door_Closed_1";
+        name = "Door_Closed_Lever";
         try {
-            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Door_Closed_In.png"));
+            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Door_Closed_Locked.png"));
         }
         catch (IOException e) {
             e.printStackTrace();
