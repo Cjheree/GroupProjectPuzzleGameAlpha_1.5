@@ -2,9 +2,15 @@ package Main;
 
 import objects.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ObjectHandler {
 
     GamePanel gp;
+    public static final int rng = (int) (Math.random() * 14); // Maximum of 14 combinations, -1 for indexing of array
+    public static int leverCount;
+    public static Map<Integer, int[]> leverCombo = new HashMap<Integer, int[]>(); // Hashmap constructors
 
     public ObjectHandler(GamePanel gp) { // Constructor
 
@@ -13,6 +19,8 @@ public class ObjectHandler {
     }
 
     public void setObject() { // Sets objects and their parameters to indexes in the obj array for recall
+
+        // Current Array Size = 100, change if needed
 
         gp.obj[0] = new object_Door_Closed_In();
         gp.obj[0].worldX = 9 * gp.tileSize;
@@ -131,5 +139,24 @@ public class ObjectHandler {
 
 
 
+    }
+
+    public void setLeverCombination() { // Sets lever combo to corresponding array via a random number generator
+
+        // List of combinations for levers, {1 = on, 0 = off, 1 = topLeft, 2 = topRight, 3 bottomRight, 4 = bottomLeft}
+        leverCombo.put(0, new int[]{1, 0, 0, 0});
+        leverCombo.put(1, new int[]{0, 1, 0, 0});
+        leverCombo.put(2, new int[]{0, 0, 1, 0});
+        leverCombo.put(3, new int[]{0, 0, 0, 1});
+        leverCombo.put(4, new int[]{1, 1, 0, 0});
+        leverCombo.put(5, new int[]{1, 0, 1, 0});
+        leverCombo.put(6, new int[]{1, 0, 0, 1});
+        leverCombo.put(7, new int[]{1, 1, 1, 0});
+        leverCombo.put(8, new int[]{1, 1, 0, 1});
+        leverCombo.put(9, new int[]{0, 1, 1, 0});
+        leverCombo.put(10, new int[]{0, 1, 0, 1});
+        leverCombo.put(11, new int[]{0, 1, 1, 1});
+        leverCombo.put(12, new int[]{0, 0, 1, 1});
+        leverCombo.put(13, new int[]{1, 0, 1, 1});
     }
 }

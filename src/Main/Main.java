@@ -23,6 +23,5 @@ public class Main {
 
         gamePanel.setObjects(); // Sets objects
         gamePanel.startGamaThread(); // Starts the Game
-
     }
 }

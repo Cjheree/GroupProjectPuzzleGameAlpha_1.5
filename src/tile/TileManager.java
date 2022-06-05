@@ -38,6 +38,7 @@ public class TileManager {
             mapTile[0] = new Tile();
             mapTile[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Stone_1.png"));
             mapTile[0].collision = true;
+
             mapTile[1] = new Tile();
             mapTile[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Dirt_1.png"));
 

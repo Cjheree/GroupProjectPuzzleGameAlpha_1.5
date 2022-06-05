@@ -5,6 +5,8 @@ import objects.SuperObject;
 import tile.TileManager;
 
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.*;
 
@@ -32,7 +34,7 @@ public class GamePanel extends JPanel implements Runnable {
     public ObjectHandler objectSetter = new ObjectHandler(this); // Initiates ObjectHandler
     public SuperObject obj[] = new SuperObject[100]; // Creates array to store objects on screen
     TileManager tileM = new TileManager(this); // Initiates Tile Manager in this GamePanel
-    KeyHandler keyH = new KeyHandler();
+    KeyHandler keyH = new KeyHandler(); // Initializes KeyHandler
     Thread gameThread; // Opens thread
 
     public Player player = new Player(this, keyH); // Creates player and allows access to this gp and this keyH
@@ -51,6 +53,8 @@ public class GamePanel extends JPanel implements Runnable {
     public void setObjects() { // Sets objects params upon initialization of game
 
         objectSetter.setObject();
+        objectSetter.setLeverCombination();
+        player.setLeverData();
 
     }
 
@@ -110,7 +114,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     }
 
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) { // Paints graphics
 
         super.paintComponent(g); // Pulls from JPanel Class
 

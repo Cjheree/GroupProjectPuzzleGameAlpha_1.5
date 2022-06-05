@@ -2,11 +2,14 @@ package entity;
 
 import Main.GamePanel;
 import Main.KeyHandler;
+import Main.ObjectHandler;
 
 import javax.imageio.ImageIO;
+import javax.lang.model.type.ArrayType;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Player extends Entity {
 
@@ -19,6 +22,10 @@ public class Player extends Entity {
     public final int screenY; // Y coordinate of the camera in relation to the player/world
 
     private int keyCount = 0; // ** This data structure may need to change depending on game loop **
+    private int leverCountNum;
+
+    public static int[] localArray;
+
 
     public Player(GamePanel gp, KeyHandler keyH) {
 
@@ -143,11 +150,22 @@ public class Player extends Entity {
         }
     }
 
+    public void setLeverData() {
+
+        int rng = ObjectHandler.rng;
+        localArray = Arrays.copyOf(ObjectHandler.leverCombo.get(rng), ObjectHandler.leverCombo.get(rng).length);
+        System.out.println(Arrays.toString(localArray));
+        for (int i = 0; i <= localArray.length - 1; i++) {
+            ObjectHandler.leverCount += localArray[i];
+        }
+        System.out.println("leverCount = " + ObjectHandler.leverCount);
+        System.out.println("leverCountNum = " + leverCountNum);
+    }
+
     public void objectInteraction(int i) {
 
         int tempX = 0;
         int tempY = 0;
-
 
         if (i != 999) {
 
@@ -157,7 +175,6 @@ public class Player extends Entity {
             String objName = gp.obj[i].name;
 
             switch (objName) {
-
 
                 case "Key_1":
                     keyCount++; // Adds keys to player's "inventory"
@@ -189,6 +206,14 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
+                        if (localArray[0] == 1) {
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
                 case "Lever_On_1":
@@ -203,6 +228,15 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         sleepCount++;
+                        if (localArray[0] == 1) {
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
+
                     }
                     break;
                 case "Lever_Off_2":
@@ -216,6 +250,14 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
+                        if (localArray[1] == 1) {
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
                 case "Lever_On_2":
@@ -229,7 +271,15 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
-                        sleepCount++;
+                        if (localArray[1] == 1) {
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        }
+                        leverCountNum++;
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
                 case "Lever_Off_3":
@@ -243,6 +293,14 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
+                        if (localArray[2] == 1) {
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
                 case "Lever_On_3":
@@ -257,6 +315,14 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         sleepCount++;
+                        if (localArray[2] == 1) {
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
                 case "Lever_Off_4":
@@ -270,6 +336,14 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
+                        if (localArray[3] == 1) {
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
                 case "Lever_On_4":
@@ -284,6 +358,14 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         sleepCount++;
+                        if (localArray[3] == 1) {
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        }
+                        System.out.println("leverCountNum = " + leverCountNum);
+                        if (leverCountNum == ObjectHandler.leverCount) {
+                            System.out.println("leverCount was Reached!");
+                            System.out.println("leverCountNum = " + leverCountNum);
+                        }
                     }
                     break;
 
