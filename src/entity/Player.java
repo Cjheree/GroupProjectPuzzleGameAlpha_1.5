@@ -22,7 +22,7 @@ public class Player extends Entity {
     public final int screenY; // Y coordinate of the camera in relation to the player/world
 
     private int keyCount = 0; // ** This data structure may need to change depending on game loop **
-    private int leverCountNum;
+    public static int leverCountNum = 4;
 
     public static int[] localArray;
 
@@ -153,12 +153,12 @@ public class Player extends Entity {
     public void setLeverData() {
 
         int rng = ObjectHandler.rng;
+        System.out.println(Arrays.toString(ObjectHandler.leverCombo.get(rng)));
         localArray = Arrays.copyOf(ObjectHandler.leverCombo.get(rng), ObjectHandler.leverCombo.get(rng).length);
-        System.out.println(Arrays.toString(localArray));
         for (int i = 0; i <= localArray.length - 1; i++) {
-            ObjectHandler.leverCount += localArray[i];
+            leverCountNum -= localArray[i];
         }
-        System.out.println("leverCount = " + ObjectHandler.leverCount);
+        System.out.println(Arrays.toString(localArray));
         System.out.println("leverCountNum = " + leverCountNum);
     }
 
@@ -207,10 +207,17 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         if (localArray[0] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
                             leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        } else if (localArray[0] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -228,11 +235,19 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         sleepCount++;
-                        if (localArray[0] == 1) {
-                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        if (localArray[0] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[0] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -251,10 +266,18 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         if (localArray[1] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
                             leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[1] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -271,12 +294,19 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
-                        if (localArray[1] == 1) {
-                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        if (localArray[0] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        leverCountNum++;
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[0] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -293,11 +323,19 @@ public class Player extends Entity {
                         gp.obj[i].worldY = tempY;
                         tempX = 0;
                         tempY = 0;
-                        if (localArray[2] == 1) {
+                        if (localArray[0] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
                             leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[2] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -315,11 +353,19 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         sleepCount++;
-                        if (localArray[2] == 1) {
-                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        if (localArray[0] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[0] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -337,10 +383,18 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         if (localArray[3] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
                             leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[3] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
@@ -358,11 +412,19 @@ public class Player extends Entity {
                         tempX = 0;
                         tempY = 0;
                         sleepCount++;
-                        if (localArray[3] == 1) {
-                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                        if (localArray[3] == 0) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum++; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
                         }
-                        System.out.println("leverCountNum = " + leverCountNum);
-                        if (leverCountNum == ObjectHandler.leverCount) {
+                        if (localArray[3] == 1) {
+                            System.out.println("Off lever moved, on displayed");
+                            System.out.println("Previous leverCountNum " + leverCountNum);
+                            leverCountNum--; // Math must be backwards because case detects String change, not current status
+                            System.out.println(leverCountNum);
+                        }
+                        if (leverCountNum == 4) {
                             System.out.println("leverCount was Reached!");
                             System.out.println("leverCountNum = " + leverCountNum);
                         }
