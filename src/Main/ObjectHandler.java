@@ -151,6 +151,11 @@ public class ObjectHandler {
         gp.obj[28].worldY = 36 * gp.tileSize;
         gp.obj[28].collision = true;
 
+        gp.obj[29] = new object_Door_Closed_Lever();
+        gp.obj[29].worldX = 9 * gp.tileSize;
+        gp.obj[29].worldY = 11 * gp.tileSize;
+        gp.obj[29].collision = true;
+
 
 
 
