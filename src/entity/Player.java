@@ -50,7 +50,7 @@ public class Player extends Entity {
     public void setDefaultValues() { // Sets default values of entity
 
         worldX = gp.tileSize * 9 ; // X coordinate on world map
-        worldY = gp.tileSize * 54; // Y coordinate on world map
+        worldY = gp.tileSize * 64; // Y coordinate on world map
         speed = 12; // Pixels traversed per iteration of FPS (1/FPS seconds)
         direction = "down"; // Player starts facing down
     }
@@ -171,7 +171,7 @@ public class Player extends Entity {
     public void moveLeverKey() { // Moves lever key to middle of room
 
         gp.obj[21].worldX = 9 * gp.tileSize;
-        gp.obj[21].worldY = 33 * gp.tileSize;
+        gp.obj[21].worldY = 35 * gp.tileSize;
 
     }
 
@@ -445,27 +445,27 @@ public class Player extends Entity {
                     break;
                 case"Locked_Door_5":
                     gp.player.worldX = gp.tileSize * 9;
-                    gp.player.worldY = gp.tileSize * 19;
+                    gp.player.worldY = gp.obj[59].worldY + (gp.tileSize * 2);
                     break;
                 case"Blue_Door_3":
                     gp.player.worldX = gp.tileSize * 9;
-                    gp.player.worldY = gp.tileSize * 16;
+                    gp.player.worldY = gp.obj[37].worldY + (gp.tileSize * 2);
                     break;
                 case"Locked_Door_6":
                     gp.player.worldX = gp.tileSize * 9;
-                    gp.player.worldY = gp.tileSize * 13;
+                    gp.player.worldY = gp.obj[64].worldY + (gp.tileSize * 2);
                     break;
                 case"Red_Door_3":
                     gp.player.worldX = gp.tileSize * 9;
-                    gp.player.worldY = gp.tileSize * 10;
+                    gp.player.worldY = gp.obj[29].worldY + (gp.tileSize * 2);
                     break;
                 case"Green_Door_3":
                     gp.player.worldX = gp.tileSize * 9;
-                    gp.player.worldY = gp.tileSize * 7;
+                    gp.player.worldY = gp.obj[43].worldY + (gp.tileSize * 2);
                     break;
                 case"Purple_Door_3":
                     gp.player.worldX = gp.tileSize * 9;
-                    gp.player.worldY = gp.tileSize * 4;
+                    gp.player.worldY = gp.obj[50].worldY + (gp.tileSize * 2);
                     break;
                 case"Locked_Door_3":
                     gp.obj[57] = null;

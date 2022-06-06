@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     // World Settings
     public final int maxWorldCol = 19; // Max tiles to draw under variable col
-    public final int maxWorldRow = 57; // Max tiles to draw under variable row
+    public final int maxWorldRow = 67; // Max tiles to draw under variable row
 
     public int FPS = 60; // Frames per second (FPS)
     public CollisionHandler cChecker = new CollisionHandler(this); // Initialises CollisionHandler
