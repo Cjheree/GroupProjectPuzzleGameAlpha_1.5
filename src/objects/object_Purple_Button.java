@@ -3,13 +3,13 @@ package objects;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class object_Red_Button_2 extends SuperObject {
+public class object_Purple_Button extends SuperObject {
 
-    public object_Red_Button_2() {
+    public object_Purple_Button() {
 
-        name = "Red_Button_2";
+        name = "Purple_Button";
         try {
-            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Red_Button.png"));
+            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Purple_Button.png"));
         }
         catch (IOException e) {
             e.printStackTrace();

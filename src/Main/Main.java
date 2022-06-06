@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Main {
 
-    private static String ver = "Alpha 1.5";
+    private static String ver = "Alpha 2.0";
 
     public static void main(String[] args) {
         // Opening arguments to create the visual elements of the game

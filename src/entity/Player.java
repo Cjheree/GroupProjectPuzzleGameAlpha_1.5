@@ -50,7 +50,7 @@ public class Player extends Entity {
     public void setDefaultValues() { // Sets default values of entity
 
         worldX = gp.tileSize * 9 ; // X coordinate on world map
-        worldY = gp.tileSize * 36; // Y coordinate on world map
+        worldY = gp.tileSize * 54; // Y coordinate on world map
         speed = 12; // Pixels traversed per iteration of FPS (1/FPS seconds)
         direction = "down"; // Player starts facing down
     }
@@ -156,17 +156,23 @@ public class Player extends Entity {
         int rng = ObjectHandler.rng;
         System.out.println(Arrays.toString(ObjectHandler.leverCombo.get(rng)));
         localArray = Arrays.copyOf(ObjectHandler.leverCombo.get(rng), ObjectHandler.leverCombo.get(rng).length);
-        for (int i = 0; i <= localArray.length - 1; i++) {
+        for (int i = 0; i <= localArray.length - 1; i++) { // Determines how many counts must be made to reach target 4
             leverCountNum -= localArray[i];
         }
-        for (int i = 0; i <= localArray.length - 1; i++) {
+        for (int i = 0; i <= localArray.length - 1; i++) { // Sets Barrel Code
             if (localArray[i] == 0) {
-                gp.obj[i + 25] = null;
+                gp.obj[i + 16] = null;
             }
         }
 
         // Test Method ** Marked for Deletion **
         // System.out.println(Arrays.toString(localArray));
+    }
+    public void moveLeverKey() { // Moves lever key to middle of room
+
+        gp.obj[21].worldX = 9 * gp.tileSize;
+        gp.obj[21].worldY = 33 * gp.tileSize;
+
     }
 
     public void objectInteraction(int i) {
@@ -188,7 +194,7 @@ public class Player extends Entity {
                     gp.obj[i] = null; // This just deletes the object!
                     break;
                 case "Door_Closed_In":
-                    if(keyCount > 0) {
+                    if (keyCount > 0) {
                         gp.obj[i] = null; // This just deletes the object!
                         keyCount--; // Removes said key from player's "inventory"
                     }
@@ -220,7 +226,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
@@ -244,7 +253,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
 
@@ -268,7 +280,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
@@ -291,7 +306,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
@@ -314,7 +332,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
@@ -338,7 +359,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
@@ -361,7 +385,10 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
@@ -385,13 +412,78 @@ public class Player extends Entity {
                             leverCountNum--; // Math must be backwards because case detects String change, not current status
                         }
                         if (leverCountNum == 4) {
-                            leverDoorUnlocked = true;
+                            gp.obj[20] = null;
+                            if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
+                                moveLeverKey();
+                            }
                             System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
-                case "Door_Closed_Lever":
-                    gp.obj[29] = null;
+                case("Locked_Door_1"):
+                    if (keyCount > 0) {
+                        gp.obj[i] = null; // This just deletes the object!
+                        keyCount--; // Removes said key from player's "inventory"
+                    }
+                    break;
+                case("Blue_Button"):
+                    gp.obj[34] = null;
+                    break;
+                case("Locked_Door_2"):
+                    if (keyCount > 0) {
+                        gp.obj[i] = null; // This just deletes the object!
+                        keyCount--; // Removes said key from player's "inventory"
+                    }
+                case("Red_Button"):
+                    gp.obj[27] = null;
+                    break;
+                case("Green_Button"):
+                    gp.obj[41] = null;
+                    break;
+                case("Purple_Button"):
+                    gp.obj[48] = null;
+                    break;
+                case"Locked_Door_5":
+                    gp.player.worldX = gp.tileSize * 9;
+                    gp.player.worldY = gp.tileSize * 19;
+                    break;
+                case"Blue_Door_3":
+                    gp.player.worldX = gp.tileSize * 9;
+                    gp.player.worldY = gp.tileSize * 16;
+                    break;
+                case"Locked_Door_6":
+                    gp.player.worldX = gp.tileSize * 9;
+                    gp.player.worldY = gp.tileSize * 13;
+                    break;
+                case"Red_Door_3":
+                    gp.player.worldX = gp.tileSize * 9;
+                    gp.player.worldY = gp.tileSize * 10;
+                    break;
+                case"Green_Door_3":
+                    gp.player.worldX = gp.tileSize * 9;
+                    gp.player.worldY = gp.tileSize * 7;
+                    break;
+                case"Purple_Door_3":
+                    gp.player.worldX = gp.tileSize * 9;
+                    gp.player.worldY = gp.tileSize * 4;
+                    break;
+                case"Locked_Door_3":
+                    gp.obj[57] = null;
+                    break;
+                case"Blue_Door_2":
+                    gp.obj[35] = null;
+                    break;
+                case"Locked_Door_4":
+                    gp.obj[58] = null;
+                    break;
+                case"Red_Door_2":
+                    gp.obj[28] = null;
+                    break;
+                case"Green_Door_2":
+                    gp.obj[42] = null;
+                    break;
+                case"Purple_Door_2":
+                    gp.obj[49] = null;
                     break;
             }
         }

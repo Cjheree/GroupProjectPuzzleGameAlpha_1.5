@@ -7,7 +7,7 @@ public class object_Blue_Door_1 extends SuperObject {
 
     public object_Blue_Door_1() {
 
-        name = "Blue_Door_Closed_1";
+        name = "Blue_Door_1";
         try {
             image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Blue_Door_Closed.png"));
         }

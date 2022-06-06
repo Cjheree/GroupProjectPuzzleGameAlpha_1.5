@@ -26,7 +26,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage(); // Sets tile images according to specific data structure and tile type
-        loadMap("maps/MapV3.txt"); // Loads map from specified txt file
+        loadMap("maps/MapV4.txt"); // Loads map from specified txt file
 
     }
 
