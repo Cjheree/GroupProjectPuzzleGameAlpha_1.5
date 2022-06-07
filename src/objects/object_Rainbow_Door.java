@@ -3,13 +3,13 @@ package objects;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class object_Door_Closed_In extends SuperObject {
+public class object_Rainbow_Door extends SuperObject {
 
-    public object_Door_Closed_In() {
+    public object_Rainbow_Door() {
 
-        name = "Door_Closed_In";
+        name = "Rainbow_Door";
         try {
-            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Door_Closed_Locked.png"));
+            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Rainbow_Door.png"));
         }
         catch (IOException e) {
             e.printStackTrace();

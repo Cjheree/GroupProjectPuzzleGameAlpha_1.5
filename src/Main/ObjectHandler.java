@@ -1,7 +1,6 @@
 package Main;
 
 import objects.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +8,6 @@ public class ObjectHandler {
 
     GamePanel gp;
     public static final int rng = (int) (Math.random() * 14); // Maximum of 14 combinations, -1 for indexing of array
-    public static int leverCount;
     public static Map<Integer, int[]> leverCombo = new HashMap<Integer, int[]>(); // Hashmap constructors
 
     public ObjectHandler(GamePanel gp) { // Constructor
@@ -26,20 +24,21 @@ public class ObjectHandler {
         gp.obj[0].worldX = 9 * gp.tileSize;
         gp.obj[0].worldY = 47 * gp.tileSize;
 
-        gp.obj[1] = new object_Chest_Closed();
+        gp.obj[1] = new object_Pedestal();
         gp.obj[1].worldX = 0 * gp.tileSize;
         gp.obj[1].worldY = 0 * gp.tileSize;
+        gp.obj[1].collision = true;
 
-        gp.obj[2] = new object_Chest_Open();
-        gp.obj[2].worldX = 0 * gp.tileSize;
-        gp.obj[2].worldY = 0 * gp.tileSize;
+        gp.obj[2] = new object_Pedestal_Trophy();
+        gp.obj[2].worldX = 9 * gp.tileSize;
+        gp.obj[2].worldY = 5 * gp.tileSize;
         gp.obj[2].collision = true;
 
         gp.obj[3] = new object_Key_1(); // Beginning Maze Key
         gp.obj[3].worldX = 1 * gp.tileSize;
         gp.obj[3].worldY = 57 * gp.tileSize;
 
-        gp.obj[4] = new object_Ladder_Up();
+        gp.obj[4] = new object_Key_Rainbow(); // Rainbow Mystery Key for Easter Egg
         gp.obj[4].worldX = 1 * gp.tileSize;
         gp.obj[4].worldY = 1 * gp.tileSize;
 
@@ -47,11 +46,11 @@ public class ObjectHandler {
         gp.obj[5].worldX = 15 * gp.tileSize;
         gp.obj[5].worldY = 33 * gp.tileSize;
 
-        gp.obj[6] = new object_Lock_Locked();
-        gp.obj[6].worldX = 1 * gp.tileSize;
-        gp.obj[6].worldY = 1 * gp.tileSize;
+        gp.obj[6] = new object_Rainbow_Door();
+        gp.obj[6].worldX = 16 * gp.tileSize;
+        gp.obj[6].worldY = 33 * gp.tileSize;
 
-        gp.obj[7] = new object_Key_1(); // Starting Room Key
+        gp.obj[7] = new object_Key_1(); // TEST KEY, MAKE SURE TO DELETE/HIDE ** Marked for Deletion **
         gp.obj[7].worldX = 9 * gp.tileSize;
         gp.obj[7].worldY = 60 * gp.tileSize;
 
@@ -95,22 +94,22 @@ public class ObjectHandler {
         gp.obj[15].worldY = 0 * gp.tileSize;
         gp.obj[15].collision = true;
 
-        gp.obj[16] = new object_Barrel_Closed();
+        gp.obj[16] = new object_Barrel_Closed_1();
         gp.obj[16].worldX = 7 * gp.tileSize;
         gp.obj[16].worldY = 60 * gp.tileSize;
         gp.obj[16].collision = true;
 
-        gp.obj[17] = new object_Barrel_Closed();
+        gp.obj[17] = new object_Barrel_Closed_2();
         gp.obj[17].worldX = 11 * gp.tileSize;
         gp.obj[17].worldY = 60 * gp.tileSize;
         gp.obj[17].collision = true;
 
-        gp.obj[18] = new object_Barrel_Closed();
+        gp.obj[18] = new object_Barrel_Closed_3();
         gp.obj[18].worldX = 11 * gp.tileSize;
         gp.obj[18].worldY = 64 * gp.tileSize;
         gp.obj[18].collision = true;
 
-        gp.obj[19] = new object_Barrel_Closed();
+        gp.obj[19] = new object_Barrel_Closed_4();
         gp.obj[19].worldX = 7 * gp.tileSize;
         gp.obj[19].worldY = 64 * gp.tileSize;
         gp.obj[19].collision = true;
@@ -362,6 +361,15 @@ public class ObjectHandler {
         gp.obj[68].worldY = 22 * gp.tileSize;
         gp.obj[68].collision = true;
 
+        gp.obj[69] = new object_You_Win_1();
+        gp.obj[69].worldX = 8 * gp.tileSize + (gp.tileSize/2);
+        gp.obj[69].worldY = 4 * gp.tileSize;
+        gp.obj[69].collision = false;
+
+        gp.obj[70] = new object_You_Win_2();
+        gp.obj[70].worldX = 9 * gp.tileSize + (gp.tileSize/2);
+        gp.obj[70].worldY = 4 * gp.tileSize;
+        gp.obj[70].collision = false;
 
 
 

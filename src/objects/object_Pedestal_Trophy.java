@@ -3,13 +3,13 @@ package objects;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class object_Barrel_Closed extends SuperObject {
+public class object_Pedestal_Trophy extends SuperObject {
 
-    public object_Barrel_Closed() {
+    public object_Pedestal_Trophy() {
 
-        name = "Barrel_Closed";
+        name = "Pedestal_Trophy";
         try {
-            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Barrel_Closed.png"));
+            image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("objects/Pedestal_Trophy.png"));
         }
         catch (IOException e) {
             e.printStackTrace();

@@ -5,7 +5,6 @@ import Main.KeyHandler;
 import Main.ObjectHandler;
 
 import javax.imageio.ImageIO;
-import javax.lang.model.type.ArrayType;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -15,16 +14,15 @@ public class Player extends Entity {
 
     GamePanel gp;
     KeyHandler keyH;
-    public boolean leverDoorUnlocked;
     private boolean standing;
     private int sleepCount = 0;
 
     public final int screenX; // X coordinate of the camera in relation to the player/world
     public final int screenY; // Y coordinate of the camera in relation to the player/world
 
-    private int keyCount = 0; // ** This data structure may need to change depending on game loop **
+    private int keyCount; // Key inventory
+    private int rainbowKeyCount; // Easter egg key inventory
     public static int leverCountNum = 4;
-
     public static int[] localArray;
 
 
@@ -484,6 +482,56 @@ public class Player extends Entity {
                     break;
                 case"Purple_Door_2":
                     gp.obj[49] = null;
+                    break;
+                case"Barrel_Closed_1":
+                    if (gp.obj[16] != null) {
+                        if (gp.obj[4] != null) {
+                            gp.obj[4].worldX = gp.tileSize * 13;
+                            gp.obj[4].worldY = gp.tileSize * 51;
+                        }
+                    }
+                    break;
+                case"Barrel_Closed_2":
+                    if (gp.obj[17] != null) {
+                        if (gp.obj[4] != null) {
+                            gp.obj[4].worldX = gp.tileSize * 13;
+                            gp.obj[4].worldY = gp.tileSize * 51;
+                        }
+                    }
+                    break;
+                case"Barrel_Closed_3":
+                    if (gp.obj[18] != null) {
+                        if (gp.obj[4] != null) {
+                            gp.obj[4].worldX = gp.tileSize * 13;
+                            gp.obj[4].worldY = gp.tileSize * 51;
+                        }
+                    }
+                    break;
+                case"Barrel_Closed_4":
+                    if (gp.obj[19] != null) {
+                        if (gp.obj[4] != null) {
+                            gp.obj[4].worldX = gp.tileSize * 13;
+                            gp.obj[4].worldY = gp.tileSize * 51;
+                        }
+                    }
+                    break;
+                case"Key_Rainbow":
+                    rainbowKeyCount++; // Adds Rainbow key to player's "inventory"
+                    gp.obj[i] = null; // This just deletes the object!
+                    break;
+                case"Rainbow_Door":
+                    gp.obj[i] = null; // This just deletes the object!
+                    rainbowKeyCount--; // Removes Rainbow key from player's "inventory"
+                    break;
+                case"Easter_Egg":
+                    gp.obj[i] = null; // This just deletes the object!
+                    speed += 3;
+                    break;
+                case"Pedestal_Trophy":
+                    gp.obj[2] = null;
+                    gp.obj[1].worldX = 9 * gp.tileSize;
+                    gp.obj[1].worldY = 5 * gp.tileSize;
+                    System.out.println("you win");
                     break;
             }
         }
