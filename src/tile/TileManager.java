@@ -21,8 +21,8 @@ public class TileManager {
 
         this.gp = gp;
 
-        mapTile = new Tile[10]; // Set size of mapTile storage array
-        objectTile = new Tile[10]; // Set size of object storage array
+        mapTile = new Tile[100]; // Set size of mapTile storage array
+        objectTile = new Tile[100]; // Set size of object storage array
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage(); // Sets tile images according to specific data structure and tile type
@@ -40,17 +40,123 @@ public class TileManager {
             mapTile[0].collision = true;
 
             mapTile[1] = new Tile();
-            mapTile[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Dirt_1.png"));
-
+            mapTile[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Soft_Black_Background.png"));
+            mapTile[1].collision = true;
 
             mapTile[2] = new Tile();
             mapTile[2].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Dirt_2.png"));
 
-            mapTile[3] = new Tile();
+            mapTile[3] = new Tile(); // Test Door
             mapTile[3].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Door_Closed_In.png"));
 
-            mapTile[4] = new Tile();
+            mapTile[4] = new Tile(); // Test Door (for 16 pixel width)
             mapTile[4].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Door_Closed_Out_Right_16W.png"));
+
+            mapTile[5] = new Tile();
+            mapTile[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Centre_1.png"));
+
+            mapTile[6] = new Tile();
+            mapTile[6].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Centre_2.png"));
+
+            mapTile[7] = new Tile();
+            mapTile[7].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Centre_3.png"));
+
+            mapTile[8] = new Tile();
+            mapTile[8].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Left_Corner.png"));
+
+            mapTile[9] = new Tile();
+            mapTile[9].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Right_Corner.png"));
+
+            mapTile[10] = new Tile();
+            mapTile[10].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Bottom_Right_Corner.png"));
+
+            mapTile[11] = new Tile();
+            mapTile[11].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Bottom_Left_Corner.png"));
+
+            mapTile[12] = new Tile();
+            mapTile[12].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Border.png"));
+
+            mapTile[13] = new Tile();
+            mapTile[13].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Bottom_Border.png"));
+
+            mapTile[14] = new Tile();
+            mapTile[14].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Right_Border.png"));
+
+            mapTile[15] = new Tile();
+            mapTile[15].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Left_Border.png"));
+
+            mapTile[16] = new Tile();
+            mapTile[16].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Up_Down.png"));
+
+            mapTile[17] = new Tile();
+            mapTile[17].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Left_Right.png"));
+
+            mapTile[18] = new Tile();
+            mapTile[18].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Up_Corners.png"));
+
+            mapTile[19] = new Tile();
+            mapTile[19].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Bottom_Corners.png"));
+
+            mapTile[20] = new Tile();
+            mapTile[20].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Room_Top.png"));
+
+            mapTile[21] = new Tile();
+            mapTile[21].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Room_Bottom.png"));
+
+            mapTile[22] = new Tile();
+            mapTile[22].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Room_Right.png"));
+
+            mapTile[23] = new Tile();
+            mapTile[23].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Room_Left.png"));
+
+            mapTile[24] = new Tile();
+            mapTile[24].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Four_Corners.png"));
+
+            mapTile[25] = new Tile();
+            mapTile[25].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Three_Way_Up.png"));
+
+            mapTile[26] = new Tile();
+            mapTile[26].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Three_Way_Down.png"));
+
+            mapTile[27] = new Tile();
+            mapTile[27].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Three_Way_Right.png"));
+
+            mapTile[28] = new Tile();
+            mapTile[28].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Three_Way_Left.png"));
+
+            mapTile[29] = new Tile();
+            mapTile[29].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Left_Corner_WOC.png"));
+
+            mapTile[30] = new Tile();
+            mapTile[30].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Right_Corner_WOC.png"));
+
+            mapTile[31] = new Tile();
+            mapTile[31].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Bottom_Right_Corner_WOC.png"));
+
+            mapTile[32] = new Tile();
+            mapTile[32].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Bottom_Left_Corner_WOC.png"));
+
+            mapTile[33] = new Tile();
+            mapTile[33].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Left_Corners.png"));
+
+            mapTile[34] = new Tile();
+            mapTile[34].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_Right_Corners.png"));
+
+            mapTile[35] = new Tile();
+            mapTile[35].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Path_TheTileNoOneAskedFor.png"));
+
+            mapTile[36] = new Tile();
+            mapTile[36].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Left_Corner_Inverted.png"));
+
+            mapTile[37] = new Tile();
+            mapTile[37].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Right_Corner_Inverted.png"));
+
+
+
+
+
+
+
 
             // Testing Methods ** Marked for Deletion **
             // System.out.println(getClass());

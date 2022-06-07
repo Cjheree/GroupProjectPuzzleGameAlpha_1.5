@@ -152,7 +152,8 @@ public class Player extends Entity {
     public void setLeverData() {
 
         int rng = ObjectHandler.rng;
-        System.out.println(Arrays.toString(ObjectHandler.leverCombo.get(rng)));
+        // Test Method ** Marked for Deletion **
+        // System.out.println(Arrays.toString(ObjectHandler.leverCombo.get(rng)));
         localArray = Arrays.copyOf(ObjectHandler.leverCombo.get(rng), ObjectHandler.leverCombo.get(rng).length);
         for (int i = 0; i <= localArray.length - 1; i++) { // Determines how many counts must be made to reach target 4
             leverCountNum -= localArray[i];
@@ -170,6 +171,12 @@ public class Player extends Entity {
 
         gp.obj[21].worldX = 9 * gp.tileSize;
         gp.obj[21].worldY = 35 * gp.tileSize;
+
+        // Moves Door Open sign
+        gp.obj[71].worldX = 8 * gp.tileSize + (gp.tileSize/2);
+        gp.obj[71].worldY = 43 * gp.tileSize;
+        gp.obj[72].worldX = 9 * gp.tileSize + (gp.tileSize/2);
+        gp.obj[72].worldY = 43 * gp.tileSize;
 
     }
 
@@ -196,7 +203,8 @@ public class Player extends Entity {
                         gp.obj[i] = null; // This just deletes the object!
                         keyCount--; // Removes said key from player's "inventory"
                     }
-                    System.out.println("keyCount: " + keyCount);
+                    // Test Method ** Marked for Deletion **
+                    // System.out.println("keyCount: " + keyCount);
                     break;
                 case "Chest_Closed":
                     if(keyCount > 0){
@@ -228,7 +236,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -255,7 +264,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
 
                     }
@@ -282,7 +292,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -308,7 +319,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -334,7 +346,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -361,7 +374,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -387,7 +401,8 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -414,11 +429,13 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            System.out.println("LeverCountNum Reached!");
+                            // Test Method ** Marked for Deletion **
+                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
                 case("Locked_Door_1"):
+                case("Locked_Door_2"):
                     if (keyCount > 0) {
                         gp.obj[i] = null; // This just deletes the object!
                         keyCount--; // Removes said key from player's "inventory"
@@ -427,11 +444,6 @@ public class Player extends Entity {
                 case("Blue_Button"):
                     gp.obj[34] = null;
                     break;
-                case("Locked_Door_2"):
-                    if (keyCount > 0) {
-                        gp.obj[i] = null; // This just deletes the object!
-                        keyCount--; // Removes said key from player's "inventory"
-                    }
                 case("Red_Button"):
                     gp.obj[27] = null;
                     break;
@@ -520,8 +532,10 @@ public class Player extends Entity {
                     gp.obj[i] = null; // This just deletes the object!
                     break;
                 case"Rainbow_Door":
-                    gp.obj[i] = null; // This just deletes the object!
-                    rainbowKeyCount--; // Removes Rainbow key from player's "inventory"
+                    if (rainbowKeyCount > 0) {
+                        gp.obj[i] = null; // This just deletes the object!
+                        rainbowKeyCount--; // Removes Rainbow key from player's "inventory"
+                    }
                     break;
                 case"Easter_Egg":
                     gp.obj[i] = null; // This just deletes the object!
@@ -531,7 +545,8 @@ public class Player extends Entity {
                     gp.obj[2] = null;
                     gp.obj[1].worldX = 9 * gp.tileSize;
                     gp.obj[1].worldY = 5 * gp.tileSize;
-                    System.out.println("you win");
+                    // Test Method ** Marked for Deletion **
+                    // System.out.println("you win");
                     break;
             }
         }

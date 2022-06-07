@@ -51,8 +51,8 @@ public class ObjectHandler {
         gp.obj[6].worldY = 33 * gp.tileSize;
 
         gp.obj[7] = new object_Key_1(); // TEST KEY, MAKE SURE TO DELETE/HIDE ** Marked for Deletion **
-        gp.obj[7].worldX = 9 * gp.tileSize;
-        gp.obj[7].worldY = 60 * gp.tileSize;
+        gp.obj[7].worldX = 0 * gp.tileSize;
+        gp.obj[7].worldY = 0 * gp.tileSize;
 
         gp.obj[8] = new object_Lever_Off_1();
         gp.obj[8].worldX = 7 * gp.tileSize;
@@ -370,6 +370,16 @@ public class ObjectHandler {
         gp.obj[70].worldX = 9 * gp.tileSize + (gp.tileSize/2);
         gp.obj[70].worldY = 4 * gp.tileSize;
         gp.obj[70].collision = false;
+
+        gp.obj[71] = new object_Sign_Door();
+        gp.obj[71].worldX = 0 * gp.tileSize;
+        gp.obj[71].worldY = 0 * gp.tileSize;
+        gp.obj[71].collision = false;
+
+        gp.obj[72] = new object_Sign_Open();
+        gp.obj[72].worldX = 0 * gp.tileSize;
+        gp.obj[72].worldY = 0 * gp.tileSize;
+        gp.obj[72].collision = false;
 
 
 
