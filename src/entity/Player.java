@@ -41,8 +41,6 @@ public class Player extends Entity {
         setDefaultValues(); // Sets Default Values
         getPlayerImage();
 
-
-
     }
 
     public void setDefaultValues() { // Sets default values of entity
@@ -83,18 +81,8 @@ public class Player extends Entity {
 
     public void update() { // Player specific update() for player specific variables
 
-         /*Location Information
-         The screen's (0,0) coordinates are in the top left corner
-
-         Y values increase as the location of the pixel moves further down the screen
-         Y values decrease as the location of the pixel moves further up the screen
-
-         X values increase as the location of the pixel moves further to the right on the screen
-         X values decrease as the location of the pixel moves further to the left of the screen
-        */
-
         if (keyH.upPressed == true || keyH.downPressed == true ||
-                keyH.leftPressed == true || keyH.rightPressed == true) {
+                keyH.leftPressed == true || keyH.rightPressed == true) { // Sets String direction to appropriate direction
 
             standing = false;
 
@@ -152,8 +140,6 @@ public class Player extends Entity {
     public void setLeverData() {
 
         int rng = ObjectHandler.rng;
-        // Test Method ** Marked for Deletion **
-        // System.out.println(Arrays.toString(ObjectHandler.leverCombo.get(rng)));
         localArray = Arrays.copyOf(ObjectHandler.leverCombo.get(rng), ObjectHandler.leverCombo.get(rng).length);
         for (int i = 0; i <= localArray.length - 1; i++) { // Determines how many counts must be made to reach target 4
             leverCountNum -= localArray[i];
@@ -164,8 +150,6 @@ public class Player extends Entity {
             }
         }
 
-        // Test Method ** Marked for Deletion **
-        // System.out.println(Arrays.toString(localArray));
     }
     public void moveLeverKey() { // Moves lever key to middle of room
 
@@ -203,8 +187,6 @@ public class Player extends Entity {
                         gp.obj[i] = null; // This just deletes the object!
                         keyCount--; // Removes said key from player's "inventory"
                     }
-                    // Test Method ** Marked for Deletion **
-                    // System.out.println("keyCount: " + keyCount);
                     break;
                 case "Chest_Closed":
                     if(keyCount > 0){
@@ -236,8 +218,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -264,8 +244,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
 
                     }
@@ -292,8 +270,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -319,8 +295,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -346,8 +320,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -374,8 +346,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -401,8 +371,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -429,8 +397,6 @@ public class Player extends Entity {
                             if (gp.obj[21] != null) { // If the key exists, move it. If not, don't
                                 moveLeverKey();
                             }
-                            // Test Method ** Marked for Deletion **
-                            // System.out.println("LeverCountNum Reached!");
                         }
                     }
                     break;
@@ -545,8 +511,6 @@ public class Player extends Entity {
                     gp.obj[2] = null;
                     gp.obj[1].worldX = 9 * gp.tileSize;
                     gp.obj[1].worldY = 5 * gp.tileSize;
-                    // Test Method ** Marked for Deletion **
-                    // System.out.println("you win");
                     break;
             }
         }

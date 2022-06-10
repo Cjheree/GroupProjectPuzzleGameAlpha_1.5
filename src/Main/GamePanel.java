@@ -11,10 +11,8 @@ import java.util.Map;
 import javax.swing.*;
 
 public class GamePanel extends JPanel implements Runnable {
+
     // Screen Settings
-
-    // REORGANISE THIS SHIT ONCE FINAL ** Marked for Deletion **
-
     final int originalTileSize = 32; // Pixel dimensions of the sprites/graphics used
     final int scale = 4; // Scale of image dilation/enlargement
 
@@ -65,17 +63,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     }
 
-    /*
-    ** Marked For Deletion **
-    public void startGameThread() { // Starts the game thread
-
-        gameThread = new Thread(this); // Declaration of thread
-        gameThread.start(); // Initializes thread using start method
-
-    }
-    */
-
-    // Unimplemented Methods
     @Override
     public void run() {
 

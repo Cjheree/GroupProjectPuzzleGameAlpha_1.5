@@ -18,22 +18,6 @@ public class Main {
         GamePanel gamePanel = new GamePanel(); // Calls initializer
         window.add(gamePanel);
 
-        /*
-        CardLayout cards = new CardLayout();
-        window.setLayout(cards);
-
-        JPanel titleScreen = new JPanel();
-        JButton startButton = new JButton("Start");
-        startButton.addActionListener(e -> {
-            cards.previous(window.getContentPane());
-        });
-        titleScreen.setPreferredSize(new Dimension(gamePanel.screenWidth, gamePanel.screenHeight));
-        titleScreen.add(startButton);
-        window.add(titleScreen, "Title");
-        cards.show(window.getContentPane(), "Title");
-        window.add(gamePanel, "Game");
-        */
-
         window.pack(); // Resolves preferred size error
 
         window.setLocationRelativeTo(null); // Ensures window is created in centre

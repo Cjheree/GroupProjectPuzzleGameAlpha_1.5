@@ -50,7 +50,7 @@ public class ObjectHandler {
         gp.obj[6].worldX = 16 * gp.tileSize;
         gp.obj[6].worldY = 33 * gp.tileSize;
 
-        gp.obj[7] = new object_Key_1(); // TEST KEY, MAKE SURE TO DELETE/HIDE ** Marked for Deletion **
+        gp.obj[7] = new object_Key_1(); // TEST KEY, MAKE SURE TO DELETE/HIDE
         gp.obj[7].worldX = 0 * gp.tileSize;
         gp.obj[7].worldY = 0 * gp.tileSize;
 

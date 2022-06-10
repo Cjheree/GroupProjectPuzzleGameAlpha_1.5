@@ -10,8 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class TileManager {
-    // ** Come back and find the best implementation of storage method **
-    // Set would probably work better
+
     GamePanel gp;
     public Tile[] mapTile; // Array storing mapTile images
     public Tile[] objectTile; // Array storing objectTile images
@@ -151,17 +150,6 @@ public class TileManager {
             mapTile[37] = new Tile();
             mapTile[37].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("tiles/Floor_Tile_Top_Right_Corner_Inverted.png"));
 
-
-
-
-
-
-
-
-            // Testing Methods ** Marked for Deletion **
-            // System.out.println(getClass());
-            // System.out.println(getClass().getClassLoader());
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -251,7 +239,5 @@ public class TileManager {
 
             }
         }
-        // Test Method ** Marked for Deletion **
-        // g2.drawImage(mapTile[4].image, (gp.tileSize + 50), 0, gp.tileSize/2, gp.tileSize, null);
     }
 }

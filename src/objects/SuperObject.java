@@ -17,7 +17,7 @@ public class SuperObject {
 
     public void draw(Graphics2D g2, GamePanel gp) { // Draws objects
 
-        // See documentation  ==> tile/TileManager() lines 115 - 130
+        // See documentation  ==> tile/TileManager() lines 210 - 224
         int screenX = worldX - gp.player.worldX + gp.player.screenX;
         int screenY = worldY - gp.player.worldY + gp.player.screenY;
 

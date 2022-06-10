@@ -28,15 +28,12 @@ public class CollisionHandler {
 
         switch (entity.direction) {
             case "up":
-
                 entityUpperRow = (entityUpperBoundY - entity.speed)/gp.tileSize;
                 tile1 = gp.tileM.mapTileNum[entityLeftCol][entityUpperRow]; // Stores the tile above (left)
                 tile2 = gp.tileM.mapTileNum[entityRightCol][entityUpperRow]; // Stores the tile above (right)
                 if (gp.tileM.mapTile[tile1].collision == true || gp.tileM.mapTile[tile2].collision == true) {
                     // Checks to see if it is not a traversable tile
                     entity.collisionState = true;
-                    // Test Method ** Marked for Deletion **
-                    // System.out.println(entity.collisionState);
                 }
                 break;
             case "down":
@@ -46,8 +43,6 @@ public class CollisionHandler {
                 if (gp.tileM.mapTile[tile1].collision == true || gp.tileM.mapTile[tile2].collision == true) {
                     // Checks to see if it is not a traversable tile
                     entity.collisionState = true;
-                    // Test Method ** Marked for Deletion **
-                    // System.out.println(entity.collisionState);
                 }
                 break;
             case "left":
@@ -57,8 +52,6 @@ public class CollisionHandler {
                 if (gp.tileM.mapTile[tile1].collision == true || gp.tileM.mapTile[tile2].collision == true) {
                     // Checks to see if it is not a traversable tile
                     entity.collisionState = true;
-                    // Test Method ** Marked for Deletion **
-                    // System.out.println(entity.collisionState);
                 }
                 break;
             case "right":
@@ -68,8 +61,6 @@ public class CollisionHandler {
                 if (gp.tileM.mapTile[tile1].collision == true || gp.tileM.mapTile[tile2].collision == true) {
                     // Checks to see if it is not a traversable tile
                     entity.collisionState = true;
-                    // Test Method ** Marked for Deletion **
-                    // System.out.println(entity.collisionState);
                 }
                 break;
         }
